@@ -7,7 +7,7 @@ const userRoute = require('./routes/user');
 const cors = require('cors');
 const port = process.env.PORT || 3000;
 const authentication = require('./middleware/authentication');
-const whitelist = ['http://127.0.0.1:5173','https://workoutsapp.netlify.app/'];
+const whitelist = ['http://127.0.0.1:5173','https://workoutsapp.netlify.app/','https://workoutsapp.netlify.app/login','https://workoutsapp.netlify.app/signup'];
 const corsOptions = {
     origin : function(origin, callback){
         if(!origin || whitelist.indexOf(origin) !==-1){
