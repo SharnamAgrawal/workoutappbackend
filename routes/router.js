@@ -1,0 +1,11 @@
+const express = require('express');
+const workoutRoute = express.Router();
+const {authentication} = require('../middleware/authentication');
+const {getAllWorkout,getWorkout,createWorkout,deleteWorkout,updateWorkout} = require('../controllers/workoutController');
+workoutRoute.use(authentication);
+workoutRoute.route('/').get(getAllWorkout);
+workoutRoute.route('/:_id').get(getWorkout);
+workoutRoute.route('/').post(createWorkout);
+workoutRoute.route('/:_id').patch(updateWorkout);
+workoutRoute.route('/:_id').delete(deleteWorkout);
+module.exports = workoutRoute;
